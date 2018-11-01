@@ -1,7 +1,7 @@
 # Web-Security-Week7
 # Project 7 - WordPress Pentesting
 
-Time spent: **12** hours spent in total
+Time spent: **11** hours spent in total
 
 > Objective: Find, analyze, recreate, and document **five vulnerabilities** affecting an old version of WordPress
 
@@ -29,7 +29,7 @@ Time spent: **12** hours spent in total
         Next, check for admin but with an incorrect password, resulting to incorrect password for admin to display. 
         Then, when we write in a random username and password, it shows error that username doesn't exist.
   - [x] Affected source code:
-    - [Link 1](https://www.wpwhitesecurity.com/wordpress-security/wordpress-username-disclosure-vulnerability/)
+    - [Link 2](https://www.wpwhitesecurity.com/wordpress-security/wordpress-username-disclosure-vulnerability/)
 3. (Required) Vulnerability Name or ID: Authenticated Stored Cross-Site Scripting via Image Filename
   - [x] Summary: 
     - Vulnerability types:
@@ -40,25 +40,18 @@ Time spent: **12** hours spent in total
   - [x] Steps to recreate: Go to create the media page and upload a picture. Once uploaded, click on the image and insert the following code to the title of the image:
     ```filename<img src=a onerror=alert(1)>.png```. Then click on "View attachment page" and the alert will pop up. 
   - [x] Affected source code:
-    - [Link 1](https://core.trac.wordpress.org/browser/branches/4.2/src/wp-admin/includes/media.php)
+    - [Link 3](https://core.trac.wordpress.org/browser/branches/4.2/src/wp-admin/includes/media.php)
 4. (Optional) Vulnerability Name or ID: Stored XSS through embedded URL
   - [x] Summary: 
     - Vulnerability types:
     - Tested in version: 4.2
     - Fixed in version: 4.2.13
   - [x] GIF Walkthrough: 
-  - [ ] Steps to recreate: 
-  - [ ] Affected source code:
-    - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
-1. (Optional) Vulnerability Name or ID
-  - [ ] Summary: 
-    - Vulnerability types:
-    - Tested in version:
-    - Fixed in version: 
-  - [ ] GIF Walkthrough: 
-  - [ ] Steps to recreate: 
-  - [ ] Affected source code:
-    - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php) 
+      - <img src='XSS embedded.gif' title='XSS' width='' alt='' />
+  - [x] Steps to recreate: 
+    - Create a page containing a harmful embedded link; for instance:``` " [embed src='https://youtube.com/embed/123\x3csvg onload=alert(59938)\x3e'][/embed] " ``` So when you public/ preview the page the alert will appear.
+  - [x] Affected source code:
+    - [Link 4](https://github.com/WordPress/WordPress/commit/419c8d97ce8df7d5004ee0b566bc5e095f0a6ca8)
 
 ## Assets
 
