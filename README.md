@@ -36,7 +36,7 @@ Time spent: **11** hours spent in total
     - Tested in version: 4.2
     - Fixed in version: 
   - [x] GIF Walkthrough: 
-    - <img src='XSS2.gif' title='XSS' width='' alt='' />
+    - <img src='XSS 2.gif' title='XSS' width='' alt='' />
   - [x] Steps to recreate: Go to create the media page and upload a picture. Once uploaded, click on the image and insert the following code to the title of the image:
     ```filename<img src=a onerror=alert(1)>.png```. Then click on "View attachment page" and the alert will pop up. 
   - [x] Affected source code:
